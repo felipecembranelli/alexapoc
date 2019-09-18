@@ -22,9 +22,6 @@ def lambda_handler(event, context):
     prevent someone else from configuring a skill that sends requests to this
     function.
     """
-    # if (event['session']['application']['applicationId'] !=
-    #         "amzn1.echo-sdk-ams.app.[unique-value-here]"):
-    #     raise ValueError("Invalid Application ID")
 
     if event['session']['new']:
         on_session_started({'requestId': event['request']['requestId']},
@@ -70,9 +67,6 @@ def on_intent(event, intent_request, session):
     print('dialogState/n')
     print(dialog_state)
 
-    #dialog_state = intent_request['intent']['dialogState']
-    #dialog_state = ''
-
     # Dispatch to your skill's intent handlers
     if intent_name == "MortageNews":
         return whatIsNewIntent(intent, session)
@@ -94,8 +88,6 @@ def on_intent(event, intent_request, session):
         return FAQTypesofLoan(intent, session)                
     elif intent_name == "FAQApplyLoan":
         return FAQApplyLoan(intent, session)
-    elif intent_name == "trip_intent":
-        return trip_intent(dialog_state)                                
     else:
         raise ValueError("Invalid intent")
 
@@ -113,35 +105,6 @@ def on_session_ended(session_ended_request, session):
 # --------------- Functions that control the skill's behavior ------------------
 #-------------------------------------------------------------------------------#
 
-def continue_dialog():
-    message = {}
-    message['shouldEndSession'] = False
-    message['directives'] = [{'type': 'Dialog.Delegate'}]
-    return build_response(message)
-    
-
-def trip_intent(dialog_state):
-    #dialog_state = event['request']['dialogState']
-    
-    print(dialog_state)
-    
-    session_attributes = {}
-    reprompt_text = None
-
-    should_end_session = False
-
-    if dialog_state in ("STARTED", "IN_PROGRESS"):
-        return continue_dialog()
-    elif dialog_state == "COMPLETED":
-        speech_output = "Have a good trip"
-    else:
-        speech_output = "No dialog"
-        
-    # Setting reprompt_text to None signifies that we do not want to reprompt
-    # the user. If the user does not respond or says something that is not
-    # understood, the session will end.
-    return build_response(session_attributes, build_speechlet_response(
-        intent['name'], speech_output, reprompt_text, should_end_session, "https://alexa-poc-bp.s3.amazonaws.com/ad1.jpg"))        
 
 #------------- generic ---------------------------------------------------------#
 
