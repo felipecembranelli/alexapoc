@@ -2,7 +2,7 @@
 Proof of concept using Alexa
 
 
-## Architecture Overview
+## Screen shot
 
 ![alt tag](https://github.com/felipecembranelli/alexapoc/blob/master/alexa_poc.png)
 
