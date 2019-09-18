@@ -1,5 +1,5 @@
 # Alexa POC
-This is a simple code used in a proof of concept with Alexa
+This is a simple code used in a proof of concept with Alexa. The flow implemented is very simple (questions / answers), there is no conversational flow implemented.
 
 
 ## Screen shot
@@ -15,6 +15,7 @@ I used this tutorial:
 
 https://medium.com/@jasonrigden/how-to-make-an-alexa-skill-with-python-cb8a6a6c4d85
 
+https://developer.amazon.com/docs/custom-skills/include-a-card-in-your-skills-response.html
 
 ## Contributing
 
