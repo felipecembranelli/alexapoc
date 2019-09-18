@@ -4,7 +4,7 @@ Proof of concept using Alexa
 
 ## Architecture Overview
 
-![alt tag]()
+![alt tag](https://github.com/felipecembranelli/alexapoc/blob/master/alexa_poc.png)
 
 ## Contributing
 
