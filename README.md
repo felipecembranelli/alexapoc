@@ -1,10 +1,20 @@
 # Alexa POC
-Proof of concept using Alexa
+This is a simple code used in a proof of concept with Alexa
 
 
 ## Screen shot
 
+In the picture below you can see the code running in a device with UI. You can also interact using a standard Echo device.
+
 ![alt tag](https://github.com/felipecembranelli/alexapoc/blob/master/alexa_poc.png)
+
+
+## Background
+
+I used this tutorial:
+
+https://medium.com/@jasonrigden/how-to-make-an-alexa-skill-with-python-cb8a6a6c4d85
+
 
 ## Contributing
 
